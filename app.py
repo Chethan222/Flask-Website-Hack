@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/maps/GuddeBettaTruckingPlace')
 def GuddeBettaTruckingPlace():
-    return render_template('GuddeBettaTruckingPlace.html')
+    return render_template('home.html')
 
 @app.route('/')
 def index():
