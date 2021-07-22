@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/style.css" />
+
+    <title>GuddeBettaTruckingPlace</title>
+</head>
+
+<body id="container">
+    <div class="main">
+        <ul class="liContainer"></ul>
+    </div>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.scrollTo(0, 1);
+            }, 0);
+        };
+        const liContainer = document.querySelector(".liContainer");
+        const arr1 = [
+            "☠",
+            "&nbsp;",
+            "Y",
+            "O",
+            "U",
+            "&nbsp;",
+            "A",
+            "R",
+            "E",
+            "&nbsp;",
+            "H",
+            "A",
+            "C",
+            "K",
+            "E",
+            "D",
+            "&nbsp;",
+            "☠",
+        ];
+        let i = 1;
+
+        for (const letter of arr1) {
+            task(letter, i);
+            i++;
+        }
+
+        function task(letter, i) {
+            let flag = 600 * i;
+            setTimeout(function() {
+                const li = document.createElement("li");
+                li.className = "liElement";
+                li.innerHTML = `${letter}`;
+                liContainer.appendChild(li);
+
+                if (flag === 600 * arr1.length) {
+                    setTimeout(function() {
+                        const lis = liContainer.children;
+                        for (const li of lis) {
+                            li.classList.add("heartbeat");
+                        }
+                    }, 600);
+                }
+            }, flag);
+        }
+    </script>
+</body>
+
+</html>
