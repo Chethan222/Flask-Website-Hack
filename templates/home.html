@@ -1,229 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-size: 10px;
+      body {
+        font-size: 10px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      .main {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        font-family: "Press Start 2P", cursive, sans-serif;
+        background-color: black;
+      }
+
+      ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+
+      .liElement {
+        color: red;
+        font-size: 3.6rem;
+        text-transform: uppercase;
+        list-style: none;
+        -webkit-animation: moveDown 1s ease-out;
+        animation: moveDown 1s ease-out;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        font-weight: 700;
+        margin-right: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .heartbeat {
+        -webkit-animation-name: heartbeat;
+        animation-name: heartbeat;
+        -webkit-animation-duration: 0.15s;
+        animation-duration: 0.15s;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+      @-webkit-keyframes heartbeat {
+        100% {
+          transform: scale(1.5, 1.5);
+          -webkit-transform: scale(1.5, 1.5);
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+      }
+
+      @keyframes heartbeat {
+        100% {
+          transform: scale(1.5, 1.5);
+          -webkit-transform: scale(1.5, 1.5);
         }
-        
-        .main {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            font-family: "Press Start 2P", cursive, sans-serif;
-            background-color: black;
+      }
+
+      @-webkit-keyframes moveDown {
+        0% {
+          -webkit-transform: translateY(-10rem);
+          transform: translateY(-10rem);
         }
-        
-        ul {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
         }
-        
+      }
+
+      @keyframes moveDown {
+        0% {
+          -webkit-transform: translateY(-10rem);
+          transform: translateY(-10rem);
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+      }
+
+      @media only screen and (max-width: 3000px) {
         .liElement {
-            color: red;
-            font-size: 3.6rem;
-            text-transform: uppercase;
-            list-style: none;
-            -webkit-animation: moveDown 1s ease-out;
-            animation: moveDown 1s ease-out;
-            -webkit-transition: 1s;
-            -o-transition: 1s;
-            transition: 1s;
-            -ms-flex-item-align: start;
-            align-self: flex-start;
-            font-weight: 700;
-            margin-right: 10px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
+          font-size: 50px;
+          margin-right: 10px;
         }
-        
-        .heartbeat {
-            -webkit-animation-name: heartbeat;
-            animation-name: heartbeat;
-            -webkit-animation-duration: 0.15s;
-            animation-duration: 0.15s;
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            -webkit-animation-direction: alternate;
-            animation-direction: alternate;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
+      }
+
+      @media only screen and (max-width: 1140px) {
+        .liElement {
+          font-size: 32px;
+          margin-right: 10px;
         }
-        
-        @-webkit-keyframes heartbeat {
-            100% {
-                transform: scale(1.5, 1.5);
-                -webkit-transform: scale(1.5, 1.5);
-            }
+      }
+
+      @media only screen and (max-width: 1023px) {
+        .liElement {
+          font-size: 24px;
+          margin-right: 8px;
         }
-        
-        @keyframes heartbeat {
-            100% {
-                transform: scale(1.5, 1.5);
-                -webkit-transform: scale(1.5, 1.5);
-            }
+      }
+
+      @media only screen and (max-width: 767px) {
+        .liElement {
+          font-size: 22px;
+          margin-right: 6px;
         }
-        
-        @-webkit-keyframes moveDown {
-            0% {
-                -webkit-transform: translateY(-10rem);
-                transform: translateY(-10rem);
-            }
-            100% {
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
-            }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .liElement {
+          font-size: 16px;
+          margin-right: 5px;
         }
-        
-        @keyframes moveDown {
-            0% {
-                -webkit-transform: translateY(-10rem);
-                transform: translateY(-10rem);
-            }
-            100% {
-                -webkit-transform: translateY(0);
-                transform: translateY(0);
-            }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .liElement {
+          font-size: 14px;
+          margin-right: 3px;
         }
-        
-        @media only screen and (max-width: 3000px) {
-            .liElement {
-                font-size: 50px;
-                margin-right: 10px;
-            }
-        }
-        
-        @media only screen and (max-width: 1140px) {
-            .liElement {
-                font-size: 32px;
-                margin-right: 10px;
-            }
-        }
-        
-        @media only screen and (max-width: 1023px) {
-            .liElement {
-                font-size: 24px;
-                margin-right: 8px;
-            }
-        }
-        
-        @media only screen and (max-width: 767px) {
-            .liElement {
-                font-size: 22px;
-                margin-right: 6px;
-            }
-        }
-        
-        @media only screen and (max-width: 480px) {
-            .liElement {
-                font-size: 16px;
-                margin-right: 5px;
-            }
-        }
-        
-        @media only screen and (max-width: 400px) {
-            .liElement {
-                font-size: 14px;
-                margin-right: 3px;
-            }
-        }
+      }
     </style>
     <title>GuddeBettaTruckingPlace</title>
-</head>
+  </head>
 
-<body id="container">
+  <body id="container">
     <div class="main">
-        <ul class="liContainer"></ul>
+      <ul class="liContainer"></ul>
     </div>
     <script>
-        window.onload = function() {
-            setTimeout(function() {
-                window.scrollTo(0, 1);
-            }, 0);
-        };
-        const liContainer = document.querySelector(".liContainer");
-        const arr1 = [
-            "☠",
-            "&nbsp;",
-            "Y",
-            "O",
-            "U",
-            "&nbsp;",
-            "A",
-            "R",
-            "E",
-            "&nbsp;",
-            "H",
-            "A",
-            "C",
-            "K",
-            "E",
-            "D",
-            "&nbsp;",
-            "☠",
-        ];
-        let i = 1;
+      window.onload = function () {
+        setTimeout(function () {
+          window.scrollTo(0, 1);
+        }, 0);
+      };
+      const liContainer = document.querySelector(".liContainer");
+      const arr1 = [
+        "☠",
+        "&nbsp;",
+        "Y",
+        "O",
+        "U",
+        "&nbsp;",
+        "A",
+        "R",
+        "E",
+        "&nbsp;",
+        "H",
+        "A",
+        "C",
+        "K",
+        "E",
+        "D",
+        "&nbsp;",
+        "B",
+        "Y",
+        "&nbsp;",
+        "A",
+        "V",
+        "I",
+        "N",
+        "A",
+        "S",
+        "H",
+        "7",
+        "9",
+        "&nbsp;",
+        "☠",
+      ];
+      let i = 1;
 
-        for (const letter of arr1) {
-            task(letter, i);
-            i++;
-        }
+      for (const letter of arr1) {
+        task(letter, i);
+        i++;
+      }
 
-        function task(letter, i) {
-            let flag = 600 * i;
-            setTimeout(function() {
-                const li = document.createElement("li");
-                li.className = "liElement";
-                li.innerHTML = `${letter}`;
-                liContainer.appendChild(li);
+      function task(letter, i) {
+        let flag = 600 * i;
+        setTimeout(function () {
+          const li = document.createElement("li");
+          li.className = "liElement";
+          li.innerHTML = `${letter}`;
+          liContainer.appendChild(li);
 
-                if (flag === 600 * arr1.length) {
-                    setTimeout(function() {
-                        const lis = liContainer.children;
-                        for (const li of lis) {
-                            li.classList.add("heartbeat");
-                        }
-                    }, 600);
-                }
-            }, flag);
-        }
+          if (flag === 600 * arr1.length) {
+            setTimeout(function () {
+              const lis = liContainer.children;
+              for (const li of lis) {
+                li.classList.add("heartbeat");
+              }
+            }, 600);
+          }
+        }, flag);
+      }
     </script>
-</body>
-
+  </body>
 </html>
